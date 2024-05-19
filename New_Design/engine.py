@@ -11,6 +11,7 @@ class Engine(ABC):
 # engine which needs service every 30000 miles
 class CapuletEngine(Engine):
     def __init__(self, current_mileage, last_service_mileage):
+        super(Engine, self).__init__()
         self.current_mileage = current_mileage
         self.last_service_mileage = last_service_mileage
 
@@ -21,6 +22,7 @@ class CapuletEngine(Engine):
 # engine which needs service every 60000 miles
 class WilloughbyEngine(Engine):
     def __init__(self, current_mileage, last_service_mileage):
+        super(Engine, self).__init__()
         self.current_mileage = current_mileage
         self.last_service_mileage = last_service_mileage
 
@@ -31,7 +33,8 @@ class WilloughbyEngine(Engine):
 # engine that needs only be replaced if its engine light is on
 class SternmanEngine(Engine):
     def __init__(self, warning_light_is_on):
+        super(Engine, self).__init__()
         self.warning_light_is_on = warning_light_is_on
 
-    def engine_should_be_serviced(self):
+    def needs_service(self):
         return self.warning_light_is_on
