@@ -12,6 +12,7 @@ class Battery(ABC):
 # specific battery that needs to be replaced every 2 years
 class SpindlerBattery(Battery):
     def __init__(self, last_service_date, current_date):
+        super(Battery, self).__init__()
         self.last_service_date = last_service_date
         self.current_date = current_date
 
@@ -24,6 +25,7 @@ class SpindlerBattery(Battery):
 # specific battery that needs to be replaced every 4 years
 class NubbinBattery(Battery):
     def __init__(self, last_service_date, current_date):
+        super(Battery, self).__init__()
         self.last_service_date = last_service_date
         self.current_date = current_date
 
